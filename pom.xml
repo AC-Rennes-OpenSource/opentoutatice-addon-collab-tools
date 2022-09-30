@@ -8,11 +8,11 @@
 	<packaging>pom</packaging>
 	<description>Addon to leverage the collaboration tools</description>
 	<name>opentoutatice-collab-tools-parent</name>
-	<version>RAB-4.7.36-SNAPSHOT</version>
+	<version>RAB-4.7.35</version>
 
 	<properties>
 		<nuxeo.version>RAB-6.1.5</nuxeo.version>
-		<opentoutatice.version>RAB-4.7.44</opentoutatice.version>
+		<opentoutatice.version>RAB-4.7.45</opentoutatice.version>
 	</properties>
 
 	<modules>
