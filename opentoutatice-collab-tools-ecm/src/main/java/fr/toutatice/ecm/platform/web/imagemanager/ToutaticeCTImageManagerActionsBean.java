@@ -38,6 +38,7 @@ import org.nuxeo.ecm.core.api.DocumentModel;
 import fr.toutatice.ecm.platform.collab.tools.constants.CollabToolsConstants;
 import fr.toutatice.ecm.platform.collab.tools.constants.ExtendedSeamPrecedence;
 import fr.toutatice.ecm.platform.core.constants.ToutaticeNuxeoStudioConst;
+import fr.toutatice.ecm.platform.service.fragments.configuration.ConfigurationBeanHelper;
 
 @Name("ImageManagerActions")
 @Scope(ScopeType.EVENT)
@@ -75,6 +76,26 @@ public class ToutaticeCTImageManagerActionsBean extends ToutaticeImageManagerAct
         } catch (Exception e) {
             log.error("Failed to generate the head image, error: " + e.getMessage());
         }
+    }
+    
+    /**
+     * Getter for isHeaderImageResizable.
+     * @return the isHeaderImageResizable
+     */
+    public boolean isHeaderImageResizable() {
+        return Boolean.valueOf(ConfigurationBeanHelper.getBean().getWebsiteParamString("annonce_header_image_resizable", "true"));
+    }
+
+    /**
+     * Setter for isHeaderImageResizable.
+     * @param isHeaderImageResizable the isHeaderImageResizable to set
+     */
+    public void setHeaderImageResizable(boolean isHeaderImageResizable) {
+        DocumentModel currentDocument = this.navigationContext.getChangeableDocument();
+        if(currentDocument == null) {
+            currentDocument = this.navigationContext.getCurrentDocument();
+        }
+        currentDocument.setPropertyValue("annonce:headerImageResizable", isHeaderImageResizable);
     }
 
 }

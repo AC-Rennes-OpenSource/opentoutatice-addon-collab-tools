@@ -35,6 +35,9 @@
 					<widget>article_image</widget>
 				</row>
 				<row>
+					<widget>article_header_image_resizable</widget>
+				</row>
+				<row>
 					<widget>files</widget>
 				</row>
 			</rows>
@@ -63,6 +66,9 @@
 				</row>
 				<row>
 					<widget>article_image</widget>
+				</row>
+				<row>
+					<widget>article_header_image_resizable</widget>
 				</row>
 				<row>
 					<widget>files</widget>

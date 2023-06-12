@@ -35,4 +35,5 @@
   <xs:element name="image" type="nxs:content"/>
   <xs:element name="resume" type="xs:string"/>
   <xs:element name="resume_mime_type" type="xs:string"/>
+  <xs:element name="headerImageResizable" type="xs:boolean" default="true"/>
 </xs:schema>
