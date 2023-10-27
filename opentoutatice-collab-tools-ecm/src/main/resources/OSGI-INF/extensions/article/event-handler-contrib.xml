@@ -10,6 +10,13 @@
 		point="event-handlers">
 
 		<handler chainId="annonce-aboutToCreate">
+			<event>aboutToCreate</event>
+			<filters>
+				<doctype>Annonce</doctype>
+			</filters>
+		</handler>
+		
+		<handler chainId="annonce-created">
 			<event>documentCreated</event>
 			<filters>
 				<doctype>Annonce</doctype>

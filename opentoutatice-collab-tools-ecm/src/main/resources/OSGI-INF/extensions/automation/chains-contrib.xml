@@ -43,13 +43,6 @@
 
 		<chain id="annonce-aboutToCreate">
 			<operation id="Context.FetchDocument" />
-			<operation id="ImageResize.Operation">
-				<param type="int" name="img_heidth">480</param>
-                <param type="int" name="img_width">640</param>
-				<param type="string" name="xpath_img_in">annonce:image</param>
-				<param type="string" name="xpath_img_out">annonce:image</param>
-				<param type="boolean" name="enlarge">true</param>
-			</operation>
 			<operation id="Document.SetProperty">
                 <param type="serializable" name="value">
                     expr:Fn.defaultIfBlank(Document.getProperty("annonce:resume"), Fn.truncateTextFromHTML(Document.getProperty("note:note"), 300))
@@ -63,6 +56,17 @@
 				</param>
 				<param type="string" name="xpath">dc:description</param>
 				<param type="boolean" name="save">false</param>
+			</operation>
+		</chain>
+		
+		<chain id="annonce-created">
+			<operation id="Context.FetchDocument" />
+			<operation id="ImageResize.Operation">
+				<param type="int" name="img_heidth">480</param>
+                <param type="int" name="img_width">640</param>
+				<param type="string" name="xpath_img_in">annonce:image</param>
+				<param type="string" name="xpath_img_out">annonce:image</param>
+				<param type="boolean" name="enlarge">true</param>
 			</operation>
 		</chain>
 		
