@@ -20,6 +20,7 @@
 			<event>documentCreated</event>
 			<filters>
 				<doctype>Annonce</doctype>
+				<condition>!document.isImmutable()</condition>
 				<condition>Event.context.sourceDocument.getPropertyValue("annonce:headerImageResizable") == true</condition>
 			</filters>
 		</handler>
